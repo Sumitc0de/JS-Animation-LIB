@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RYO IRAGO</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+    * {
+        font-family: "Kanit", serif;
+    }
+
+    .font-family {
+        font-family: "Quantico", serif;
+    }
+
+    .home-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-image: url(https://ryo-irago.com/_next/static/media/hero_pc.cfd4b6d7.jpg);
+        background-position: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    @media  screen and (max-width:425px) {
+        
+        .home-bg{
+           background-size: 250%;
+        }
+        
+    }
+</style>
+
+<body class="bg-[#111111]">
+<div id="cursor" class="border-white border-2 w-10  h-10 rounded-[50%]"></div>
+    <header class="header w-full h-20 flex items-center justify-between text-white px-8 absolute top-0  lg:h-28 lg:p-16  ">
+        <img src="https://ryo-irago.com/logo_wht.svg" class="w-5 cursor-pointer">
+        <p id="nav-elem" class="text-xs sm:text-sm cursor-pointer"> 
+            
+            WORKS <br> <span class="sm:hidden
+            ">WORKS</span> </p>
+    </header>
+    <div
+        class="home-bg  w-full h-screen flex items-center justify-between flex-col text-white py-16 sm:py-20 lg:py-28 lg:font-light">
+        <div class="top-title flex items-center justify-center flex-col gap-3 mt-3">
+            <p class="font-family text-xs sm:text-xl">{PORTFOLIO}</p>
+            <p class="font-family text-5xl sm:text-8xl">RYO IRAGO</p>
+        </div>
+
+        <div class="bot-title flex items-center justify-center flex-col font-family mb-3">
+            <p class="text-sm font-light sm:text-3xl ">WEB DESIGNER & FRONT-END ENGINEER</p>
+            <p class="text-xs">( BASED IN JAPAN )</p>
+        </div>
+    </div>
+    <footer
+        class="footer absolute z-30 w-full h-16 text-white  text-[1rem] bottom-0 left-0 flex items-center justify-between px-8 lg:p-16  lg:h-28">
+        <p>© RYO IRAGO</p>
+        <p class="cursor-pointer">PROFILE</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="main.js"></script>
+    <script>
+        var tl = gsap.timeline();
+        tl.from(".header", {
+            y: -100,
+            duration: 2,
+            delay: 0.2,
+            opacity: 0,
+            stagger: 0.3
+        }, 'header')
+        tl.from(".footer", {
+            y: 100,
+            duration: 2,
+            delay: 0.2,
+            opacity: 1,
+            stagger: 0.3
+        }, 'header')
+
+        gsap.from(".home-bg", {
+            opacity: 0,
+            duration: 2,
+            ease: "power1.out",
+            delay: 1.5,
+        })
+
+        tl.from(".top-title p", {
+            y: -50,
+            duration: 1,
+            delay: 0.3,
+            ease: "power4.out",
+            opacity: 0,
+            stagger: 0.1
+        }, 'title')
+
+        tl.from(".bot-title p", {
+            y: 50,
+            duration: 1,
+            delay: 0.3,
+            ease: "power4.out",
+            opacity: 0,
+            stagger: 0.1
+        }, 'title')
+
+       
+
+    </script>
+</body>
+
+</html>
